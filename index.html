@@ -6,35 +6,78 @@
     <link rel="stylesheet" href="style/main.css"/>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="logotype">
             <img class="logo" src="image/logo.gif" alt="logo"/>
-            <div class="logoName">Ivan Krasikov</div>
+            <div class="logo_name">Ivan Krasikov</div>
         </div>
         <div class="mainlink">
-            <div>Главная</div>
-            <div>Об авторе</div>
-            <div>Мои работы</div>
-            <div>Контакты</div>
+            <a href="#main" class="link">Главная</a>
+            <a href="#author" class="link">Об авторе</a>
+            <a href="#projects" class="link">Мои работы</a>
+            <a href="#letter" class="link">Контакты</a>
         </div>
     </header>
-    <wrapper>
-        <div class="mainInfo"></div>
-        <div class="aboutAuthor"></div>
-        <div class="projects"></div>
-        <div class="nicePic"></div>
-        <div class="letterMe"></div>
+    <wrapper class="wrapper">
+        <div class="main_info" id="main">
+            <div class="info">
+                <p id="H">Web-разработка</p>
+                <p id="text">
+                   Это моя сайт-визитка. 
+                   Здесь содержится информация 
+                   обо мне и моих работах.
+                </p>
+            </div>
+        </div>
+        <div class="about_author" id="author">
+            <div class="content_aa">
+                <img class="toni" src="image/toni.png" alt="toni soprano"/>
+                <div class="maintext">
+                    <p id="Ha">Обо мне</p>
+                    <p id="textA">
+                            Меня зовут Иван Красиков. Я начинающий back-end разработчик, учусь в ЛГТУ на направление Программная инженерия. 
+                        В будующем собираюсь стать базированным гига-чадом разработчиком, 
+                        а на данный момент познаю язык PHP, базы данных и прочие технологии back-end разработки.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="projects" id="projects">
+            <p id="HC">Мои работы</p>
+            <div class="projects_blocks">
+                <div class="block" id="auto"><p style="padding-top: 1rem;">Сайт по прокату автомобилей</p></div>
+                <div class="block" id="library"><p style="padding-top: 1rem;">ИС "Учет читателей библиотеки"</p></div>
+                <div class="block" id="durak"><p style="padding-top: 1rem;">Игра "Дурак онлайн"</p></div>
+                <div class="block" id="itsme"><p style="padding-top: 1rem;">Это я</p></div>
+            </div>
+        </div>
+        <div class="nice_pic">
+
+        </div>
+        <div class="letter_me" id="letter">
+            <p id="HL">Хотите связаться со мной?</p>
+            <div class="letter">
+                <form class="form">
+                    <div class="form_data">
+                        <input type="text" class="li" placeholder="Ваше имя" autocomplete="off" name="name">
+                        <input type="text | email" class="li" placeholder="Ваш email" autocomplete="off" name="email" style="margin-left: 1rem;">
+                    </div>
+                    <textarea id="message" placeholder="Сообщение" name="message"></textarea>
+                    <input type="button" id="send" value="Отправить" name="send">
+                </form>
+            </div>
+        </div>
     </wrapper>
-    <footer>
-        <div class="infoFooter">
-            <div>Красиков Иван</div>
-            <div>(C) 2023. Все права защищены.</div>
+    <footer class="footer">
+        <div class="info_footer">
+            <p style="font-size: 2rem; color: #000;">Красиков Иван</p>
+            <p style="font-size: 1rem;">(C) 2023. Все права защищены.</p>
         </div>
         <div class="social">
-            <img src="image/vk.png" alt="vk"/>
-            <img src="image/telegram.png" alt="telegram"/>
-            <img src="image/youtube.png" alt="youtube"/>
-            <img src="image/instagram.png" alt="instagram">
+            <a><img src="image/vk.png" alt="vk"/></a>
+            <a><img src="image/telegram.png" alt="telegram"/></a>
+            <a><img src="image/youtube.png" alt="youtube"/></a>
+            <a><img src="image/instagram.png" alt="instagram" style="width: 46px; height: 46px;"></a>
         </div>
     </footer>
     
