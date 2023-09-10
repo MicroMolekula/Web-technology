@@ -1,0 +1,37 @@
+@media(min-width:1900px){
+    header {
+        background: #FFF;
+        width: 119.9375rem;
+        height: 6.25713rem;
+        
+    }
+    .logo {
+        width: 6.24675rem;
+        height: 6.25713rem;
+    
+    }
+    .logotype {
+        width: 295.846px;
+        height: 100.114px;
+    }
+}
+
+@media (min-width: 1400px){
+   
+}
+
+@media (min-width: 1280px){
+    
+}
+
+@media (min-width: 1024px){
+
+}
+
+@media (min-width: 320px){
+
+}
+
+@media (min-width: 769px){
+
+}
