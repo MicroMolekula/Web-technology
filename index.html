@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Ivan Krasikov</title>
     <link rel="stylesheet" href="style/main.css"/>
+
 </head>
 <body>
     <header class="header">
@@ -61,14 +63,15 @@
         <div class="letter_me" id="letter">
             <p id="HL">Хотите связаться со мной?</p>
             <div class="letter">
-                <form class="form">
+                <form class="form" id="input-form" method="post" target="no-target" name="submit-to-google-sheet">
                     <div class="form_data">
-                        <input type="text" class="li" placeholder="Ваше имя" autocomplete="off" name="name">
-                        <input type="text | email" class="li" placeholder="Ваш email" autocomplete="off" name="email" style="margin-left: 1rem;">
+                        <input type="text" class="li" id="input-name" placeholder="Ваше имя" autocomplete="off" name="name">
+                        <input type="text | email" class="li" id="input-email" placeholder="Ваш email" autocomplete="off" name="email" style="margin-left: 1rem;">
                     </div>
                     <textarea id="message" placeholder="Сообщение" name="message"></textarea>
-                    <input type="button" id="send" value="Отправить" name="send">
-                </form>
+                    <button type="submit" id="send" name="send">Отправить</button>
+                </form>            
+                <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSch5m0eMZ3gNGMMeQcCIUOWiXZebqjf-clec8r6v-4tSkBRHg/viewform?embedded=true"  frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>-->
             </div>
         </div>
     </wrapper>
@@ -78,12 +81,48 @@
             <p id="c">(C) 2023. Все права защищены.</p>
         </div>
         <div class="social">
-            <a><img class="icon" src="image/vk.png" alt="vk"/></a>
+            <a href="https://vk.com/ivan_krasikovv"><img class="icon" src="image/vk.png" alt="vk"/></a>
             <a><img class="icon" src="image/telegram.png" alt="telegram"/></a>
             <a><img class="icon" src="image/youtube.png" alt="youtube"/></a>
             <a><img class="icon" src="image/instagram.png" alt="instagram"></a>
         </div>
     </footer>
-    
+    <script>
+
+        function showNotification({className, html}) {
+            let notification = document.createElement('div');
+            notification.className = "notification";
+            if (className) {
+                notification.classList.add(className);
+            }
+
+            notification.innerHTML = html;
+            document.body.append(notification);
+
+            setTimeout(() => notification.remove(), 1500);
+        }
+
+        
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwx2yd-wfvJo8aNf7hpmUcM2RfaAJ5H_Q3WaOjMzU9BFcZgUO7fiw9Nv4fCOxyI6wDXkQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+
+            showNotification({
+                html: '<img id="statchem" src="image/policeman.png" alt=""/><p class="text_notification">Спасибо за обратную связь!</p>',
+            });
+
+            document.getElementById('input-name').value = '';
+            document.getElementById('input-email').value = '';
+            document.getElementById('message').value = '';
+        })
+
+    </script>
+    <!--<div class="notification"><img id="statchem" src="image/policeman.png" alt=""/><p class="text_notification">Спасибо за обратную связь!</p></div>-->
 </body>
 </html>
