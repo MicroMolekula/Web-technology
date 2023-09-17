@@ -1478,3 +1478,16 @@
     width: 19.8rem;
     background-color: #D9D9D9;
 }
+
+.video {
+    height: 62.12963rem;
+    display: flex;
+    justify-content: center;
+    background-color: #D9D9D9;
+}
+
+#video {
+    margin-top: 12rem;
+    width: 64rem;
+    height: 36rem;
+}

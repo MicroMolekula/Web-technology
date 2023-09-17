@@ -57,8 +57,13 @@
                 </div>
             </div>
         </div>
+        <div class="video">
+            <video id="video"  controls="controls" poster="image/preview.jpg">
+                <source src="video/The Sopranos __ Wonderful Life.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            </video>
+        </div>
         <div class="nice_pic">
-
+            
         </div>
         <div class="letter_me" id="letter">
             <p id="HL">Хотите связаться со мной?</p>
@@ -101,8 +106,6 @@
 
             setTimeout(() => notification.remove(), 1500);
         }
-
-        
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwx2yd-wfvJo8aNf7hpmUcM2RfaAJ5H_Q3WaOjMzU9BFcZgUO7fiw9Nv4fCOxyI6wDXkQ/exec'
         const form = document.forms['submit-to-google-sheet']
